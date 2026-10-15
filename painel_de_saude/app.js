@@ -76,8 +76,8 @@ class PainelApp {
 
     // Método construtor
     constructor() {
-        this.#form = document.getElementById('form-paciente');
-        this.#tabelaCorpo = document.getElementById('tabela-pacientes-corpo');
+        this.#form = document.getElementById('paciente');
+        this.#tabelaCorpo = document.getElementById('tabela');
     }
 
     // Ponto de inicialização da aplicação
@@ -142,3 +142,6 @@ class PainelApp {
         });
     }
 }
+
+const app = new PainelApp();
+app.iniciar();
