@@ -1,0 +1,103 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+form, table, .card-didatico {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #219653;
+}
+
+/* Tabela Zebrada */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #34495e;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Painel do Desenvolvedor */
+.developer-panel {
+    margin-top: 40px;
+    border-top: 2px dashed #ccc;
+    padding-top: 20px;
+}
+
+.card-didatico {
+    border-left: 5px solid #2980b9;
+    background-color: #ecf0f1;
+}

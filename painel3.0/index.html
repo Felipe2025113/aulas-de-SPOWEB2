@@ -1,0 +1,103 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Saúde da Clínica 3.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Painel de Saúde da Clínica</h1>
+        
+        <!-- Formulário de Cadastro -->
+        <section class="form-section">
+            <h2>Cadastro de Paciente</h2>
+            <form id="formPaciente">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipoPaciente">Tipo de Atendimento:</label>
+                    <select id="tipoPaciente" required>
+                        <option value="Particular">Particular</option>
+                        <option value="Convenio">Convênio</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="groupCarteirinha" style="display: none;">
+                    <label for="carteirinha">Número da Carteirinha:</label>
+                    <input type="text" id="carteirinha">
+                </div>
+
+                <div class="form-group">
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" placeholder="00000-000" maxlength="9" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cidade">Cidade/UF:</label>
+                    <input type="text" id="cidade" readonly placeholder="Preenchido automaticamente pelo CEP">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="altura">Altura (m):</label>
+                        <input type="number" id="altura" step="0.01" min="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="peso">Peso (kg):</label>
+                        <input type="number" id="peso" step="0.1" min="1" required>
+                    </div>
+                </div>
+
+                <button type="submit">Cadastrar Paciente</button>
+            </form>
+        </section>
+
+        <!-- Tabela de Relatórios -->
+        <section class="report-section">
+            <h2>Relatório de Atendimentos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Cidade/UF</th>
+                        <th>Altura</th>
+                        <th>Peso</th>
+                        <th>IMC</th>
+                        <th>Classificação</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaPacientes">
+                    <!-- Inserção dinâmica via JS -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Seção Didática: Painel do Desenvolvedor -->
+        <section class="developer-panel">
+            <h2>Painel do Desenvolvedor: Como funciona o JSON e as Requisições?</h2>
+            <div class="card-didatico">
+                <h3>1. O que é JSON?</h3>
+                <p><strong>JSON</strong> (JavaScript Object Notation) é um formato leve de troca de dados estruturado puramente em texto. Ele organiza as informações em pares de <code>"chave": "valor"</code> (ex: <code>"localidade": "São Paulo"</code>), permitindo que diferentes sistemas e linguagens de programação conversem de forma simples e universal.</p>
+            </div>
+            <div class="card-didatico">
+                <h3>2. Como a requisição funciona no navegador?</h3>
+                <p>O navegador utiliza a API <code>fetch()</code> para enviar um pedido assíncrono (em segundo plano) para a internet — neste caso, para o servidor do ViaCEP. Essa comunicação assíncrona busca e traz a informação necessária <strong>sem recarregar a tela atual</strong>, mantendo a experiência de uso fluida e ininterrupta.</p>
+            </div>
+            <div class="card-didatico">
+                <h3>3. Como o JavaScript utiliza a resposta?</h3>
+                <p>A resposta bruta retornada da internet chega apenas como texto corrido. Quando executamos o método <code>.json()</code>, o JavaScript lê e converte esse texto de forma automática em um <strong>objeto nativo do código</strong>. A partir desse momento, conseguimos acessar propriedades específicas diretamente através do ponto (ex: <code>dados.localidade</code>).</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Importação do script principal como Módulo -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
