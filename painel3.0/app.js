@@ -21,7 +21,7 @@ tipoPacienteSelect.addEventListener('change', () => {
 })
 
 cepInput.addEventListener('blur', async () => {
-    const cepLimpo = cepInput.value.replace('') 
+    const cepLimpo = cepInput.value.replace(/\D/g, '')
 
     if (cepLimpo.length !== 8) {
         if (cepLimpo.length > 0) {
