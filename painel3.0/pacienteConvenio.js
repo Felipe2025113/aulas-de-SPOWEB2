@@ -1,4 +1,4 @@
-import Paciente from "./Paciente.js";
+import Paciente from "./paciente.js";
 
 class PacienteConvenio extends Paciente{
     #carteirinha
