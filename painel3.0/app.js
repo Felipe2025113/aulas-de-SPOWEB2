@@ -1,5 +1,5 @@
-import Paciente from './Paciente.js'
-import PacienteConvenio from './PacienteConvenio.js'
+import Paciente from './paciente.js'
+import PacienteConvenio from './pacienteConvenio.js'
 
 const form = document.getElementById('formPaciente')
 const tipoPacienteSelect = document.getElementById('tipoPaciente')
